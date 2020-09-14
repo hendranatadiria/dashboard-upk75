@@ -119,36 +119,50 @@
                 <div class="container-fluid">
                     <!-- Chart widget top Start-->
                     <div class="row">
-                        <div class="col-xl-6 col-md-12 box-col-12">
+                        <div class="col-sm-6 col-xl-3 col-lg-6">
                             <div class="card o-hidden">
-                                <div class="chart-widget-top">
-                                    <div class="row card-body">
-                                        <div class="col-5">
-                                            <h6 class="f-w-600 font-primary">Individu</h6><span class="num"><span class="counter">90</span>%<i class="icon-angle-up f-12 ml-1"></i></span>
+                                <div class="bg-primary b-r-4 card-body">
+                                    <div class="media static-top-widget">
+                                        <div class="align-self-center text-center"><i data-feather="user"></i></div>
+                                        <div class="media-body"><span class="m-0">Individu</span>
+                                            <h4 class="mb-0 " id="tukar_individu">...</h4><i class="icon-bg" data-feather="user"></i>
                                         </div>
-                                        <div class="col-7 text-right">
-                                            <h4 class="num total-value"><span class="counter" id="tukar_individu">3654</span></h4><span>Bilyet</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div id="chart-widget1"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-md-12 box-col-12">
+                        <div class="col-sm-6 col-xl-3 col-lg-6">
                             <div class="card o-hidden">
-                                <div class="chart-widget-top">
-                                    <div class="row card-body">
-                                        <div class="col-7">
-                                            <h6 class="f-w-600 font-secondary">Kelompok</h6><span class="num"><span class="counter">30</span>%<i class="icon-angle-up f-12 ml-1"></i></span>
-                                        </div>
-                                        <div class="col-5 text-right">
-                                            <h4 class="num total-value counter" id="tukar_kelompok">12569</h4><span>Bilyet</span>
+                                <div class="bg-secondary b-r-4 card-body">
+                                    <div class="media static-top-widget">
+                                        <div class="align-self-center text-center"><i data-feather="users"></i></div>
+                                        <div class="media-body"><span class="m-0">Kelompok</span>
+                                            <h4 class="mb-0 " id="tukar_kelompok">...</h4><i class="icon-bg" data-feather="users"></i>
                                         </div>
                                     </div>
-                                    <div id="chart-widget2">
-                                        <div class="flot-chart-placeholder" id="chart-widget-top-second"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3 col-lg-6">
+                            <div class="card o-hidden">
+                                <div class="bg-primary b-r-4 card-body">
+                                    <div class="media static-top-widget">
+                                        <div class="align-self-center text-center"><i data-feather="calendar"></i></div>
+                                        <div class="media-body"><span class="m-0">Total Hari Ini</span>
+                                            <h4 class="mb-0 counter">893</h4><i class="icon-bg" data-feather="calendar"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3 col-lg-6">
+                            <div class="card o-hidden">
+                                <div class="bg-primary b-r-4 card-body">
+                                    <div class="media static-top-widget">
+                                        <div class="align-self-center text-center"><i data-feather="trending-up"></i></div>
+                                        <div class="media-body"><span class="m-0">Total Akumulasi</span>
+                                            <h4 class="mb-0 counter">45631</h4><i class="icon-bg" data-feather="trending-up"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -178,7 +192,7 @@
                         <div class="col-xl-7 col-md-12 box-col-12">
                             <div class="card o-hidden">
                                 <div class="card-header">
-                                    <h5>Marketin Expenses</h5>
+                                    <h5>Grafik Penukaran Individual</h5>
                                 </div>
                                 <div class="bar-chart-widget">
                                     <div class="bottom-content card-body">
@@ -194,7 +208,7 @@
                         <div class="col-xl-5 col-md-12 box-col-12">
                             <div class="card o-hidden">
                                 <div class="card-header">
-                                    <h5>Total Earning</h5>
+                                    <h5>Grafik Penukaran Kelompok</h5>
                                 </div>
                                 <div class="bar-chart-widget">
                                     <div class="top-content bg-primary"></div>
@@ -204,7 +218,7 @@
                                                 <div id="chart-widget5"> </div>
                                             </div>
                                         </div>
-                                        <div class="row text-center f-w-600">
+                                        <!--<div class="row text-center f-w-600">
                                             <div class="col-4 b-r-light">
                                                 <div><span class="num font-primary">12%<i class="icon-angle-up f-12 ml-1"></i></span><span class="text-muted mt-2 mb-2 block-bottom">Year</span>
                                                     <h4 class="num m-0"><span class="counter color-bottom">3659</span>M</h4>
@@ -220,7 +234,7 @@
                                                     <h4 class="num m-0"><span class="counter color-bottom">9361</span>M</h4>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -585,17 +599,18 @@
     <script src="../assets/js/clipboard/clipboard.min.js"></script>
     <script src="../assets/js/counter/jquery.waypoints.min.js"></script>
     <script src="../assets/js/counter/jquery.counterup.min.js"></script>
-    <script src="../assets/js/counter/counter-custom.js"></script>
     <script src="../assets/js/custom-card/custom-card.js"></script>
     <script src="../assets/js/chart-widget.js"></script>
     <script src="../assets/js/tooltip-init.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
     <!-- login js-->
     <!-- Plugin used-->
     <script>
-        surat = $.getJSON("https://spreadsheets.google.com/feeds/list/1jxLmf7UHPZmD3-X8Mtd92ePQjTsc01kD3PFR2q6fdDo/3/public/full?alt=json", function(data) {
+        $.getJSON("https://spreadsheets.google.com/feeds/list/1jxLmf7UHPZmD3-X8Mtd92ePQjTsc01kD3PFR2q6fdDo/3/public/full?alt=json", function(data) {
             console.log(data);
             last_surat = moment(data['feed']['updated']['$t']);
             $('#last_surat').html(last_surat.format("dddd, MMMM Do YYYY, h:mm:ss a"));
@@ -622,6 +637,219 @@
             });
 
         });
+
+        $.getJSON("https://spreadsheets.google.com/feeds/list/1jxLmf7UHPZmD3-X8Mtd92ePQjTsc01kD3PFR2q6fdDo/1/public/full?alt=json", function(data) {
+            console.log("individual");
+            console.log(data);
+            last_individu = moment(data['feed']['updated']['$t']);
+            $('#last_individu').html(last_individu.format("dddd, MMMM Do YYYY, h:mm:ss a"));
+            $('#tukar_individu').html(numeral(data['feed']['entry'][0]['gsx$total']['$t']).format("0,0"));
+            arrayIndividual = {
+                'tukar': [],
+                'cancel': [],
+                'bulan': [],
+                'tanggal': [],
+            };
+            data['feed']['entry'].forEach(mapToChart, arrayIndividual);
+
+            function mapToChart(item, index) {
+                console.log(item);
+                this['tukar'].push(item['gsx$tukar']['$t']);
+                this['cancel'].push(item['gsx$cancel']['$t']);
+                this['bulan'].push(item['gsx$bulan']['$t'])
+                this['tanggal'].push(item['gsx$tanggal']['$t'])
+            }
+
+            var optionscolumnchart = {
+                series: [{
+                    name: 'Tukar',
+                    data: arrayIndividual['tukar']
+                }, {
+                    name: 'Cancel',
+                    data: arrayIndividual['cancel']
+                }, ],
+                legend: {
+                    show: true
+                },
+                chart: {
+                    type: 'bar',
+                    height: 380
+                },
+                plotOptions: {
+                    bar: {
+                        radius: 10,
+                        horizontal: false,
+                        columnWidth: '55%',
+                        endingShape: 'rounded',
+                    }
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                stroke: {
+                    show: true,
+                    colors: ['transparent'],
+                    curve: 'smooth',
+                    lineCap: 'butt'
+                },
+                grid: {
+                    show: false,
+                    padding: {
+                        left: 0,
+                        right: 0
+                    }
+                },
+                xaxis: {
+                    categories: arrayIndividual['tanggal'],
+                },
+                yaxis: {
+                    title: {
+                        text: 'bilyet'
+                    }
+                },
+                fill: {
+                    colors: [CubaAdminConfig.primary, CubaAdminConfig.secondary, '#51bb25'],
+                    type: 'gradient',
+                    gradient: {
+                        shade: 'light',
+                        type: 'vertical',
+                        shadeIntensity: 0.1,
+                        inverseColors: false,
+                        opacityFrom: 1,
+                        opacityTo: 0.9,
+                        stops: [0, 100]
+                    }
+                },
+
+                tooltip: {
+                    y: {
+                        formatter: function(val) {
+                            return val + " bilyet"
+                        }
+                    }
+                }
+            };
+
+
+
+            var chartcolumnchart = new ApexCharts(
+                document.querySelector("#chart-widget4"),
+                optionscolumnchart
+            );
+            chartcolumnchart.render();
+        });
+
+        $.getJSON("https://spreadsheets.google.com/feeds/list/1jxLmf7UHPZmD3-X8Mtd92ePQjTsc01kD3PFR2q6fdDo/2/public/full?alt=json", function(data) {
+            console.log("kelompok");
+            console.log(data);
+            last_individu = moment(data['feed']['updated']['$t']);
+            $('#last_individu').html(last_individu.format("dddd, MMMM Do YYYY, h:mm:ss a"));
+            $('#tukar_kelompok').html(numeral(data['feed']['entry'][0]['gsx$total']['$t']).format('0,0'));
+            arrayKelompok = {
+                'bilyet': [],
+                'cancel': [],
+                'bulan': [],
+                'tanggal': [],
+                'kelompok': [],
+            }
+
+            function mapToChart(item, index) {
+                console.log(item);
+                this['bilyet'].push(item['gsx$tukar']['$t']);
+                this['kelompok'].push(item['gsx$kelompok']['$t']);
+                this['cancel'].push(item['gsx$cancel']['$t']);
+                this['bulan'].push(item['gsx$bulan']['$t']);
+                this['tanggal'].push(item['gsx$tanggal']['$t']);
+            }
+
+            var optionscolumnchart = {
+                series: [{
+                    name: 'Bilyet',
+                    data: arrayKelompok['tukar'],
+                    type: 'column'
+                }, {
+                    name: 'Cancel',
+                    data: arrayKelompok['cancel'],
+                    type: 'column'
+                }, {
+                    name: 'Kelompok',
+                    data: arrayKelompok['cancel'],
+                    type: 'line',
+                }],
+                legend: {
+                    show: true
+                },
+                chart: {
+                    type: 'line',
+                    height: 380
+                },
+                plotOptions: {
+                    bar: {
+                        radius: 10,
+                        horizontal: false,
+                        columnWidth: '55%',
+                        endingShape: 'rounded',
+                    }
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                stroke: {
+                    show: true,
+                    colors: ['transparent'],
+                    curve: 'smooth',
+                    lineCap: 'butt'
+                },
+                grid: {
+                    show: false,
+                    padding: {
+                        left: 0,
+                        right: 0
+                    }
+                },
+                xaxis: {
+                    categories: arrayKelompok['tanggal'],
+                },
+                yaxis: {
+                    title: {
+                        text: 'bilyet'
+                    }
+                },
+                fill: {
+                    colors: [CubaAdminConfig.primary, CubaAdminConfig.secondary, '#51bb25'],
+                    type: 'gradient',
+                    gradient: {
+                        shade: 'light',
+                        type: 'vertical',
+                        shadeIntensity: 0.1,
+                        inverseColors: false,
+                        opacityFrom: 1,
+                        opacityTo: 0.9,
+                        stops: [0, 100]
+                    }
+                },
+
+                tooltip: {
+                    y: {
+                        formatter: function(val) {
+                            return val + " bilyet"
+                        }
+                    }
+                }
+            };
+
+
+
+            var chartcolumnchart = new ApexCharts(
+                document.querySelector("#chart-widget5"),
+                optionscolumnchart
+            );
+            chartcolumnchart.render();
+
+        });
+
+
+
         $(".page-wrapper").attr("class", "page-wrapper horizontal-wrapper ");
         $(".page-body-wrapper").attr("class", "page-body-wrapper horizontal-menu");
         $(".logo-wrapper").find('img').attr('src', '../assets/images/logo/logo.png');
