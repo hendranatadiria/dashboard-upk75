@@ -10,7 +10,7 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
-    <title>Cuba - Premium Admin Template</title>
+    <title>Dashboard UPK 75th RI - Bank Indonesia KPw Jawa Tengah</title>
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/feather-icon.css">
     <!-- Plugins css start-->
     <link rel="stylesheet" type="text/css" href="../assets/css/prism.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/datatables.css">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
@@ -41,7 +42,7 @@
     <div class="tap-top"><i data-feather="chevrons-up"></i></div>
     <!-- tap on tap ends-->
     <!-- page-wrapper Start-->
-    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+    <div class="page-wrapper horizontal-wrapper" id="pageWrapper">
         <!-- Page Header Start-->
         <div class="page-main-header">
             <div class="main-header-right row m-0">
@@ -60,7 +61,6 @@
                     <div class="logo-wrapper">
                         <a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
                     </div>
-                    <div class="toggle-sidebar"><i class="status_toggle middle" data-feather="grid" id="sidebar-toggle"> </i></div>
                 </div>
                 <div class="left-menu-header col horizontal-wrapper pl-0">
                 </div>
@@ -87,13 +87,13 @@
         </div>
         <!-- Page Header Ends                              -->
         <!-- Page Body Start-->
-        <div class="page-body-wrapper sidebar-icon">
+        <div class="page-body-wrapper horizontal-menu">
             <!-- Page Sidebar Start-->
             <header class="main-nav horizontal-menu">
                 <div class="logo-wrapper">
                     <a href="index.html"><img class="img-fluid for-light" src="../assets/images/logo/logo.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo_dark.png" alt=""></a>
                     <div class="back-btn"><i class="fa fa-angle-left"></i></div>
-                    <!--<div class="toggle-sidebar"><i class="status_toggle middle" data-feather="grid" id="sidebar-toggle"> </i></div>-->
+                    <div class="toggle-sidebar"><i class="status_toggle middle" data-feather="grid" id="sidebar-toggle"> </i></div>
                 </div>
                 <div class="logo-icon-wrapper">
                     <a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
@@ -109,37 +109,7 @@
                             </div>
                             <div class="col-6">
                                 <!-- Bookmark Start-->
-                                <div class="bookmark pull-right">
-                                    <ul>
-                                        <li><a href="#" data-container="body" data-toggle="popover" data-placement="top" title="" data-original-title="Chat"><i data-feather="message-square"></i></a></li>
-                                        <li><a href="#" data-container="body" data-toggle="popover" data-placement="top" title="" data-original-title="Icons"><i data-feather="command"></i></a></li>
-                                        <li><a href="#" data-container="body" data-toggle="popover" data-placement="top" title="" data-original-title="Learning"><i data-feather="layers"></i></a></li>
-                                        <li><a href="#"><i class="bookmark-search" data-feather="star"></i></a>
-                                            <form class="form-inline search-form" action="#" method="get">
-                                                <div class="form-group form-control-search">
-                                                    <div class="Typeahead Typeahead--twitterUsers">
-                                                        <div class="u-posRelative">
-                                                            <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text" placeholder="Search.." name="q" title="" autofocus>
-                                                            <div class="spinner-border Typeahead-spinner" role="status"><span class="sr-only">Loading...</span></div>
-                                                        </div>
-                                                        <div class="Typeahead-menu"></div>
-                                                        <script id="result-template" type="text/x-handlebars-template">
-                                                            <div class="ProfileCard u-cf">
-                                                                <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
-                                                                <div class="ProfileCard-details">
-                                                                    <div class="ProfileCard-realName">{{name}}</div>
-                                                                </div>
-                                                            </div>
-                                                        </script>
-                                                        <script id="empty-template" type="text/x-handlebars-template">
-                                                            <div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div>
-                                                        </script>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </div>
+
                                 <!-- Bookmark Ends-->
                             </div>
                         </div>
@@ -157,7 +127,7 @@
                                             <h6 class="f-w-600 font-primary">Individu</h6><span class="num"><span class="counter">90</span>%<i class="icon-angle-up f-12 ml-1"></i></span>
                                         </div>
                                         <div class="col-7 text-right">
-                                            <h4 class="num total-value"><span class="counter">3654</span></h4><span>Bilyet</span>
+                                            <h4 class="num total-value"><span class="counter" id="tukar_individu">3654</span></h4><span>Bilyet</span>
                                         </div>
                                     </div>
                                     <div>
@@ -174,7 +144,7 @@
                                             <h6 class="f-w-600 font-secondary">Kelompok</h6><span class="num"><span class="counter">30</span>%<i class="icon-angle-up f-12 ml-1"></i></span>
                                         </div>
                                         <div class="col-5 text-right">
-                                            <h4 class="num total-value counter">12569</h4><span>Bilyet</span>
+                                            <h4 class="num total-value counter" id="tukar_kelompok">12569</h4><span>Bilyet</span>
                                         </div>
                                     </div>
                                     <div id="chart-widget2">
@@ -255,6 +225,44 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Ajax sourced data  Starts-->
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Data Surat Stakeholder</h5>
+                                    <span>Last updated: <span id="last_surat">...</span></span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="display" id="data-source-2" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Tanggal</th>
+                                                    <th>Tujuan</th>
+                                                    <th>TTD</th>
+                                                    <th>Jumlah</th>
+                                                    <th>Siap Data</th>
+                                                    <th>Proses TTD</th>
+                                                    <th>Kirim</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Tanggal</th>
+                                                    <th>Tujuan</th>
+                                                    <th>TTD</th>
+                                                    <th>Jumlah</th>
+                                                    <th>Siap Data</th>
+                                                    <th>Proses TTD</th>
+                                                    <th>Kirim</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ajax sourced data Ends-->
                         <div class="col-xl-4 col-lg-12 box-col-6 xl-50">
                             <div class="card">
                                 <div class="card-header">
@@ -548,9 +556,10 @@
                         <div class="col-md-6 footer-copyright">
                             <p class="mb-0">&copy; 2020 - Bank Indonesia KPw Jawa Tengah.</p>
                         </div>
+                        <!--
                         <div class="col-md-6">
                             <p class="pull-right mb-0">Developed with <i class="fa fa-heart font-secondary"></i> by hendraNATA Creative Labs</p>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </footer>
@@ -568,6 +577,7 @@
     <script src="../assets/js/sidebar-menu.js"></script>
     <script src="../assets/js/config.js"></script>
     <!-- Plugins JS start-->
+    <script src="../assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
     <script src="../assets/js/chart/apex-chart/moment.min.js"></script>
     <script src="../assets/js/chart/apex-chart/apex-chart.js"></script>
     <script src="../assets/js/chart/apex-chart/stock-prices.js"></script>
@@ -584,6 +594,41 @@
     <script src="../assets/js/script.js"></script>
     <!-- login js-->
     <!-- Plugin used-->
+    <script>
+        surat = $.getJSON("https://spreadsheets.google.com/feeds/list/1jxLmf7UHPZmD3-X8Mtd92ePQjTsc01kD3PFR2q6fdDo/3/public/full?alt=json", function(data) {
+            console.log(data);
+            last_surat = moment(data['feed']['updated']['$t']);
+            $('#last_surat').html(last_surat.format("dddd, MMMM Do YYYY, h:mm:ss a"));
+            surat_arr = new Array();
+            data["feed"]["entry"].forEach(process, surat_arr);
+
+
+            function process(item, index) {
+                console.log(item);
+                single = [
+                    String(item['gsx$tanggal']['$t']),
+                    item['gsx$tujuan']['$t'].toString(),
+                    item['gsx$ttd']['$t'].toString(),
+                    item['gsx$jumlah']['$t'].toString(),
+                    item['gsx$siapdata']['$t'].toString(),
+                    item['gsx$prosesttd']['$t'].toString(),
+                    item['gsx$kirim']['$t'].toString(),
+                ]
+                this.push(single);
+            }
+            $('#data-source-2').dataTable({
+                "bSort": false,
+                "data": surat_arr,
+            });
+
+        });
+        $(".page-wrapper").attr("class", "page-wrapper horizontal-wrapper ");
+        $(".page-body-wrapper").attr("class", "page-body-wrapper horizontal-menu");
+        $(".logo-wrapper").find('img').attr('src', '../assets/images/logo/logo.png');
+        localStorage.setItem('page-wrapper', 'horizontal-wrapper');
+        localStorage.setItem('page-body-wrapper', 'horizontal-menu');
+        $(".main-nav").hide();
+    </script>
 </body>
 
 </html>
