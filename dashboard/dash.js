@@ -1,11 +1,7 @@
 $(document).ready(function() {
     //Init Moment
     moment.locale('id');
-    height = $("#rencanaindividu").height();
-    $("#rencana").css('height', height);
-    $("#rencana").css('margin', 'auto');
-    hdr = $(".page-main-header").height();
-    $(".page-body").css("margin-top", hdr);
+
     //SURAT STAKEHOLDER
     $.getJSON("https://spreadsheets.google.com/feeds/list/1jxLmf7UHPZmD3-X8Mtd92ePQjTsc01kD3PFR2q6fdDo/3/public/full?alt=json", function(data) {
         surat_arr = new Array();
@@ -739,7 +735,11 @@ $(document).ready(function() {
     });
 
 
-
+    height = $("#rencanaindividu").height();
+    $("#rencana").css('height', height);
+    $("#rencana").css('margin', 'auto');
+    hdr = $(".page-main-header").height();
+    $(".page-body").css("margin-top", hdr);
     $(".page-wrapper").attr("class", "page-wrapper horizontal-wrapper ");
     $(".page-body-wrapper").attr("class", "page-body-wrapper horizontal-menu");
     $(".logo-wrapper").find('img').attr('src', 'logobi.png');
