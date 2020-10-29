@@ -35,6 +35,17 @@
     <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
+    <style>
+        .disable-divider:after {
+            height: 0px !important;
+            top: 0px !important;
+        }
+        
+        .disable-divider:before {
+            height: 0px !important;
+            left: 0px !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -59,7 +70,7 @@
                 </form>
                 <div class="main-header-left">
                     <div class="logo-wrapper">
-                        <a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
+                        <a href="index.html"><img class="" src="logobi.png" height="40px" alt=""></a>
                     </div>
                 </div>
                 <div class="left-menu-header col horizontal-wrapper pl-0">
@@ -91,12 +102,13 @@
             <!-- Page Sidebar Start-->
             <header class="main-nav horizontal-menu">
                 <div class="logo-wrapper">
-                    <a href="index.html"><img class="img-fluid for-light" src="../assets/images/logo/logo.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo_dark.png" alt=""></a>
+                    <a href="index.html"><img class="img-fluid for-light" src="logobi.png" height="40px" alt=""><img class="img-fluid for-dark" height="40px" src="logobi.png" alt=""></a>
                     <div class="back-btn"><i class="fa fa-angle-left"></i></div>
                     <div class="toggle-sidebar"><i class="status_toggle middle" data-feather="grid" id="sidebar-toggle"> </i></div>
                 </div>
                 <div class="logo-icon-wrapper">
-                    <a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
+                    <a href="index.html"><img class="img" src="logobi.png" height="40px" alt=""></a>
+
                 </div>
             </header>
             <!-- Page Sidebar Ends-->
@@ -106,6 +118,9 @@
                         <div class="row">
                             <div class="col-6">
                                 <h3>Dashboard Penukaran UPK 75th RI</h3>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">Last Update:&nbsp <span id="last_update">...</span></li>
+                                </ol>
                             </div>
                             <div class="col-6">
                                 <!-- Bookmark Start-->
@@ -136,7 +151,7 @@
                                 <div class="bg-secondary b-r-4 card-body">
                                     <div class="media static-top-widget">
                                         <div class="align-self-center text-center"><i data-feather="users"></i></div>
-                                        <div class="media-body"><span class="m-0">Kelompok</span>
+                                        <div class="media-body"><span class="m-0">Kolektif</span>
                                             <h4 class="mb-0 " id="tukar_kelompok">...</h4><i class="icon-bg" data-feather="users"></i>
                                         </div>
                                     </div>
@@ -149,7 +164,7 @@
                                     <div class="media static-top-widget">
                                         <div class="align-self-center text-center"><i data-feather="calendar"></i></div>
                                         <div class="media-body"><span class="m-0">Total Hari Ini</span>
-                                            <h4 class="mb-0 counter">893</h4><i class="icon-bg" data-feather="calendar"></i>
+                                            <h4 class="mb-0 counter" id="tukar_hariini">...</h4><i class="icon-bg" data-feather="calendar"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -161,7 +176,7 @@
                                     <div class="media static-top-widget">
                                         <div class="align-self-center text-center"><i data-feather="trending-up"></i></div>
                                         <div class="media-body"><span class="m-0">Total Akumulasi</span>
-                                            <h4 class="mb-0 counter">45631</h4><i class="icon-bg" data-feather="trending-up"></i>
+                                            <h4 class="mb-0 counter" id="tukar_akumulasi">...</h4><i class="icon-bg" data-feather="trending-up"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -189,6 +204,93 @@
                     <!-- Chart widget top Ends-->
                     <!-- Chart widget with bar chart Start-->
                     <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="display tabel-atas" id="report-overview" style="width:100%; text-align:center;">
+                                            <thead class="text-center">
+                                                <tr>
+                                                    <th rowspan="3" class="text-center">Periode</th>
+                                                    <th colspan="3" class="text-center">Individu</th>
+                                                    <th colspan="6" class="text-center">Kolektif</th>
+                                                    <th colspan="2" class="text-center">TOA</th>
+                                                    <th colspan="4" class="text-center">Bilyet Keluar</th>
+                                                    <th class="text-center">Saldo</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Renc.</th>
+                                                    <th>Tukar</th>
+                                                    <th>Batal</th>
+                                                    <th colspan="2" class="text-center">Masyarakat</th>
+                                                    <th colspan="4" class="text-center">Surat</th>
+                                                    <th colspan="2" class="text-center"></th>
+                                                    <th>INDV</th>
+                                                    <th>KOL</th>
+                                                    <th>TOA</th>
+                                                    <th>TOTAL</th>
+                                                    <th>3.700.000</th>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="3" class="text-center">Bilyet</th>
+                                                    <th>Kelp.</th>
+                                                    <th>Bilyet</th>
+                                                    <th>Kirim</th>
+                                                    <th>Respon</th>
+                                                    <th>Kelp.</th>
+                                                    <th>Bilyet</th>
+                                                    <th>All</th>
+                                                    <th>Real</th>
+                                                    <th>Bilyet</th>
+                                                    <th colspan="3" class="text-center">Bilyet</th>
+                                                    <th class="text-center">Bilyet</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="bulanan">
+                                                    <td colspan="17" class="text-left"><strong>Bulanan</strong></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                </tr>
+                                                <tr id="harian" class="odd">
+                                                    <td colspan="17" class="text-left"><strong>Harian</strong></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                    <td style="display: none;"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-xl-7 col-md-12 box-col-12">
                             <div class="card o-hidden">
                                 <div class="card-header">
@@ -208,7 +310,7 @@
                         <div class="col-xl-5 col-md-12 box-col-12">
                             <div class="card o-hidden">
                                 <div class="card-header">
-                                    <h5>Grafik Penukaran Kelompok</h5>
+                                    <h5>Grafik Penukaran Kolektif</h5>
                                 </div>
                                 <div class="bar-chart-widget">
                                     <div class="top-content bg-primary"></div>
@@ -239,12 +341,139 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-xl-7 col-md-12 box-col-12">
+                            <div class="card o-hidden">
+                                <div class="card-header">
+                                    <h5>Grafik Incremental Individual</h5>
+                                </div>
+                                <div class="bar-chart-widget">
+                                    <div class="bottom-content card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div id="chart-widget-incremental-individu"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-md-12 box-col-12">
+                            <div class="card o-hidden">
+                                <div class="card-header">
+                                    <h5>Grafik Incremental Kolektif</h5>
+                                </div>
+                                <div class="bar-chart-widget">
+                                    <div class="top-content bg-primary"></div>
+                                    <div class="bottom-content card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div id="chart-widget-incremental-kelompok"> </div>
+                                            </div>
+                                        </div>
+                                        <!--<div class="row text-center f-w-600">
+                                            <div class="col-4 b-r-light">
+                                                <div><span class="num font-primary">12%<i class="icon-angle-up f-12 ml-1"></i></span><span class="text-muted mt-2 mb-2 block-bottom">Year</span>
+                                                    <h4 class="num m-0"><span class="counter color-bottom">3659</span>M</h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 b-r-light">
+                                                <div><span class="num font-primary">15%<i class="icon-angle-up f-12 ml-1"></i></span><span class="text-muted mt-2 mb-2 block-bottom">Month</span>
+                                                    <h4 class="num m-0"><span class="counter color-bottom">698</span>M</h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div><span class="num font-primary">34%<i class="icon-angle-up f-12 ml-1"></i></span><span class="text-muted mt-2 mb-2 block-bottom">Today</span>
+                                                    <h4 class="num m-0"><span class="counter color-bottom">9361</span>M</h4>
+                                                </div>
+                                            </div>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 xl-100 box-col-12">
+                            <div class="widget-joins card widget-arrow disable-divider">
+                                <div class="row">
+                                    <div class="col-sm pr-0">
+                                        <div class="media border-after-xs" id="rencana">
+                                            <div class="align-self-center mr-3 text-left" style="color: #7366ff">
+                                                <h6 class="mb-1">Rencana Penukaran</h6>
+                                                <h4 class="mb-0" id="tglbesok">...</h4>
+                                            </div>
+                                            <div class="media-body align-self-center"></div>
+                                            <div class="media-body">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 xl-50 chart_data_right box-col-12">
+                            <div class="card" id="rencanaindividu">
+                                <div class="card-body">
+                                    <div class="media align-items-center">
+                                        <div class="media-body right-chart-content">
+                                            <h4><span id="indvbesok" style="color: #2b2b2b">...</span><span class="new-box">bilyet</span></h4><span>Individu</span>
+                                        </div>
+                                        <div class="knob-block text-center">
+
+                                            <i class="icon " data-feather="user" style="color: #7366ff"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 xl-50 chart_data_right box-col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media align-items-center">
+                                        <div class="media-body right-chart-content">
+                                            <h4><span id="kolbesok" style="color: #2b2b2b">...</span><span class="new-box">bilyet</span></h4><span>Kolektif</span>
+                                        </div>
+                                        <div class="knob-block text-center">
+
+                                            <i class="icon" data-feather="pocket" style="color: #7366ff"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 xl-50 chart_data_right box-col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media align-items-center">
+                                        <div class="media-body right-chart-content">
+                                            <h4 id="klpbesok">..</h4><span>Kelompok</span>
+                                        </div>
+                                        <div class="knob-block text-center">
+
+                                            <i class="icon " data-feather="users" style="color: #7366ff"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 xl-50 chart_data_right box-col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media align-items-center">
+                                        <div class="media-body right-chart-content text-danger">
+                                            <h4 id="totbesok">...</h4><span class="text-danger">Total</span>
+                                        </div>
+                                        <div class="knob-block text-center">
+
+                                            <i class="icon text-danger" data-feather="list"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Ajax sourced data  Starts-->
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
                                     <h5>Data Surat Stakeholder</h5>
-                                    <span>Last updated: <span id="last_surat">...</span></span>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -276,288 +505,62 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Report Detail</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="display" id="data-source-3" style="width:100%; text-align:center;">
+                                            <thead class="text-center">
+                                                <tr>
+                                                    <th rowspan="3" class="text-center">Periode</th>
+                                                    <th colspan="3" class="text-center">Individu</th>
+                                                    <th colspan="8" class="text-center">Kolektif</th>
+                                                    <th colspan="2" class="text-center">TOA</th>
+                                                    <th colspan="4" class="text-center">Bilyet Keluar</th>
+                                                    <th class="text-center">Saldo</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Renc.</th>
+                                                    <th>Tukar</th>
+                                                    <th>Batal</th>
+                                                    <th colspan="2" class="text-center">Total</th>
+                                                    <th colspan="2" class="text-center">Masyarakat</th>
+                                                    <th colspan="4" class="text-center">Surat</th>
+                                                    <th colspan="2" class="text-center"></th>
+                                                    <th>INDV</th>
+                                                    <th>KOL</th>
+                                                    <th>TOA</th>
+                                                    <th>TOTAL</th>
+                                                    <th>3.700.000</th>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="3" class="text-center">Bilyet</th>
+                                                    <th>Kelp.</th>
+                                                    <th>Bilyet</th>
+                                                    <th>Kelp.</th>
+                                                    <th>Bilyet</th>
+                                                    <th>Kirim</th>
+                                                    <th>Respon</th>
+                                                    <th>Kelp.</th>
+                                                    <th>Bilyet</th>
+                                                    <th>All</th>
+                                                    <th>Real</th>
+                                                    <th>Bilyet</th>
+                                                    <th colspan="3" class="text-center">Bilyet</th>
+                                                    <th class="text-center">Bilyet</th>
+                                                </tr>
+                                            </thead>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Ajax sourced data Ends-->
-                        <div class="col-xl-4 col-lg-12 box-col-6 xl-50">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="row">
-                                        <div class="col-9">
-                                            <h5>Skill Status</h5>
-                                        </div>
-                                        <div class="col-3 text-right"><i class="text-muted" data-feather="trending-up"></i></div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-container">
-                                        <div id="circlechart"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 col-lg-12 box-col-6 xl-50">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="row">
-                                        <div class="col-9">
-                                            <h5>Order Status</h5>
-                                        </div>
-                                        <div class="col-3 text-right"><i class="text-muted" data-feather="shopping-bag"></i></div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-container">
-                                        <div id="progress1"></div>
-                                        <div id="progress2"></div>
-                                        <div id="progress3"></div>
-                                        <div id="progress4"></div>
-                                        <div id="progress5"> </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Chart widget with bar chart Ends-->
-                    <!-- small widgets Start-->
-                    <div class="row">
-                        <!-- Live Product chart widget Start-->
-                        <div class="xl-50 col-md-7">
-                            <div class="small-chart-widget chart-widgets-small">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Live Products</h5>
-                                        <div class="card-header-right">
-                                            <ul class="list-unstyled card-option">
-                                                <li><i class="fa fa-spin fa-cog"></i></li>
-                                                <li><i class="view-html fa fa-code"></i></li>
-                                                <li><i class="icofont icofont-maximize full-card"></i></li>
-                                                <li><i class="icofont icofont-minus minimize-card"></i></li>
-                                                <li><i class="icofont icofont-refresh reload-card"></i></li>
-                                                <li><i class="icofont icofont-error close-card"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart-container">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div id="chart-widget6"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="code-box-copy">
-                                            <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                                            <pre><code class="language-html" id="example-head">&lt;!-- Cod Box Copy begin --&gt;
-&lt;div class="chart-container"&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-12"&gt;
-      &lt;div id="chart-widget6"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- Cod Box Copy end --&gt;</code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Live Product chart widget Ends-->
-                        <!-- Turnover chart widget Start-->
-                        <div class="xl-50 col-md-5">
-                            <div class="small-chart-widget chart-widgets-small">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Turnover</h5>
-                                        <div class="card-header-right">
-                                            <ul class="list-unstyled card-option">
-                                                <li><i class="fa fa-spin fa-cog"></i></li>
-                                                <li><i class="view-html fa fa-code"></i></li>
-                                                <li><i class="icofont icofont-maximize full-card"></i></li>
-                                                <li><i class="icofont icofont-minus minimize-card"></i></li>
-                                                <li><i class="icofont icofont-refresh reload-card"></i></li>
-                                                <li><i class="icofont icofont-error close-card"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart-container">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div id="chart-widget7"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="code-box-copy">
-                                            <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head1" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                                            <pre><code class="language-html" id="example-head1">&lt;!-- Cod Box Copy begin --&gt;
-&lt;div class="chart-container"&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-12"&gt;
-      &lt;div id="chart-widget7"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- Cod Box Copy end --&gt;</code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Turnover chart widget Ends-->
-                        <!-- Monthly Sale chart widget Start-->
-                        <div class="xl-50 col-md-5">
-                            <div class="small-chart-widget chart-widgets-small">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Monthly Sales</h5>
-                                        <div class="card-header-right">
-                                            <ul class="list-unstyled card-option">
-                                                <li><i class="fa fa-spin fa-cog"></i></li>
-                                                <li><i class="view-html fa fa-code"></i></li>
-                                                <li><i class="icofont icofont-maximize full-card"></i></li>
-                                                <li><i class="icofont icofont-minus minimize-card"></i></li>
-                                                <li><i class="icofont icofont-refresh reload-card"></i></li>
-                                                <li><i class="icofont icofont-error close-card"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart-container">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div id="chart-widget8"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="code-box-copy">
-                                            <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head2" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                                            <pre><code class="language-html" id="example-head2">&lt;!-- Cod Box Copy begin --&gt;
-&lt;div class="chart-container"&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-12"&gt;
-      &lt;div id="chart-widget8"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- Cod Box Copy end --&gt;</code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Monthly Sale chart widget Ends-->
-                        <!-- Uses chart widget Start-->
-                        <div class="xl-50 col-md-7">
-                            <div class="small-chart-widget chart-widgets-small">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Uses</h5>
-                                        <div class="card-header-right">
-                                            <ul class="list-unstyled card-option">
-                                                <li><i class="fa fa-spin fa-cog"></i></li>
-                                                <li><i class="view-html fa fa-code"></i></li>
-                                                <li><i class="icofont icofont-maximize full-card"></i></li>
-                                                <li><i class="icofont icofont-minus minimize-card"></i></li>
-                                                <li><i class="icofont icofont-refresh reload-card"></i></li>
-                                                <li><i class="icofont icofont-error close-card"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart-container">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div id="chart-widget9"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="code-box-copy">
-                                            <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head3" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                                            <pre><code class="language-html" id="example-head3">&lt;!-- Cod Box Copy begin --&gt;
-&lt;div class="chart-container"&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-12"&gt;
-      &lt;div id="chart-widget9"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- Cod Box Copy end --&gt;</code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Uses chart widget Ends-->
-                    </div>
-                    <!-- small widgets Ends-->
-                    <!-- Browser uses and website visiter widget Start-->
-                    <div class="row">
-                        <!-- browser uses widget chart Start-->
-                        <div class="col-sm-12 box-col-12">
-                            <div class="donut-chart-widget">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Browser Uses</h5>
-                                        <div class="card-header-right">
-                                            <ul class="list-unstyled card-option">
-                                                <li><i class="fa fa-spin fa-cog"></i></li>
-                                                <li><i class="view-html fa fa-code"></i></li>
-                                                <li><i class="icofont icofont-maximize full-card"></i></li>
-                                                <li><i class="icofont icofont-minus minimize-card"></i></li>
-                                                <li><i class="icofont icofont-refresh reload-card"></i></li>
-                                                <li><i class="icofont icofont-error close-card"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div id="chart-widget13"></div>
-                                        <div class="code-box-copy">
-                                            <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head4" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                                            <pre><code class="language-html" id="example-head4">&lt;!-- Cod Box Copy begin --&gt;
-&lt;div id="#chart-widget13"&gt;&lt;/div&gt;
-&lt;!-- Cod Box Copy end --&gt;</code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- browser uses widget chart Endss-->
-                    </div>
-                    <!-- status widget Start-->
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-12 box-col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="row">
-                                        <div class="col-9">
-                                            <h5>Finance</h5>
-                                        </div>
-                                        <div class="col-3 text-right"><i class="text-muted" data-feather="navigation"></i></div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-container">
-                                        <div id="columnchart"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-12 box-col-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="row">
-                                        <div class="col-9">
-                                            <h5>Order Status</h5>
-                                        </div>
-                                        <div class="col-3 text-right"><i class="text-muted" data-feather="shopping-bag"></i></div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-container">
-                                        <div id="linechart"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                     <!-- status widget Ends-->
                 </div>
@@ -592,271 +595,22 @@
     <script src="../assets/js/config.js"></script>
     <!-- Plugins JS start-->
     <script src="../assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
-    <script src="../assets/js/chart/apex-chart/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
     <script src="../assets/js/chart/apex-chart/apex-chart.js"></script>
-    <script src="../assets/js/chart/apex-chart/stock-prices.js"></script>
     <script src="../assets/js/prism/prism.min.js"></script>
     <script src="../assets/js/clipboard/clipboard.min.js"></script>
     <script src="../assets/js/counter/jquery.waypoints.min.js"></script>
     <script src="../assets/js/counter/jquery.counterup.min.js"></script>
     <script src="../assets/js/custom-card/custom-card.js"></script>
-    <script src="../assets/js/chart-widget.js"></script>
     <script src="../assets/js/tooltip-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
     <!-- login js-->
     <!-- Plugin used-->
-    <script>
-        $.getJSON("https://spreadsheets.google.com/feeds/list/1jxLmf7UHPZmD3-X8Mtd92ePQjTsc01kD3PFR2q6fdDo/3/public/full?alt=json", function(data) {
-            console.log(data);
-            last_surat = moment(data['feed']['updated']['$t']);
-            $('#last_surat').html(last_surat.format("dddd, MMMM Do YYYY, h:mm:ss a"));
-            surat_arr = new Array();
-            data["feed"]["entry"].forEach(process, surat_arr);
-
-
-            function process(item, index) {
-                console.log(item);
-                single = [
-                    String(item['gsx$tanggal']['$t']),
-                    item['gsx$tujuan']['$t'].toString(),
-                    item['gsx$ttd']['$t'].toString(),
-                    item['gsx$jumlah']['$t'].toString(),
-                    item['gsx$siapdata']['$t'].toString(),
-                    item['gsx$prosesttd']['$t'].toString(),
-                    item['gsx$kirim']['$t'].toString(),
-                ]
-                this.push(single);
-            }
-            $('#data-source-2').dataTable({
-                "bSort": false,
-                "data": surat_arr,
-            });
-
-        });
-
-        $.getJSON("https://spreadsheets.google.com/feeds/list/1jxLmf7UHPZmD3-X8Mtd92ePQjTsc01kD3PFR2q6fdDo/1/public/full?alt=json", function(data) {
-            console.log("individual");
-            console.log(data);
-            last_individu = moment(data['feed']['updated']['$t']);
-            $('#last_individu').html(last_individu.format("dddd, MMMM Do YYYY, h:mm:ss a"));
-            $('#tukar_individu').html(numeral(data['feed']['entry'][0]['gsx$total']['$t']).format("0,0"));
-            arrayIndividual = {
-                'tukar': [],
-                'cancel': [],
-                'bulan': [],
-                'tanggal': [],
-            };
-            data['feed']['entry'].forEach(mapToChart, arrayIndividual);
-
-            function mapToChart(item, index) {
-                console.log(item);
-                this['tukar'].push(item['gsx$tukar']['$t']);
-                this['cancel'].push(item['gsx$cancel']['$t']);
-                this['bulan'].push(item['gsx$bulan']['$t'])
-                this['tanggal'].push(item['gsx$tanggal']['$t'])
-            }
-
-            var optionscolumnchart = {
-                series: [{
-                    name: 'Tukar',
-                    data: arrayIndividual['tukar']
-                }, {
-                    name: 'Cancel',
-                    data: arrayIndividual['cancel']
-                }, ],
-                legend: {
-                    show: true
-                },
-                chart: {
-                    type: 'bar',
-                    height: 380
-                },
-                plotOptions: {
-                    bar: {
-                        radius: 10,
-                        horizontal: false,
-                        columnWidth: '55%',
-                        endingShape: 'rounded',
-                    }
-                },
-                dataLabels: {
-                    enabled: false
-                },
-                stroke: {
-                    show: true,
-                    colors: ['transparent'],
-                    curve: 'smooth',
-                    lineCap: 'butt'
-                },
-                grid: {
-                    show: false,
-                    padding: {
-                        left: 0,
-                        right: 0
-                    }
-                },
-                xaxis: {
-                    categories: arrayIndividual['tanggal'],
-                },
-                yaxis: {
-                    title: {
-                        text: 'bilyet'
-                    }
-                },
-                fill: {
-                    colors: [CubaAdminConfig.primary, CubaAdminConfig.secondary, '#51bb25'],
-                    type: 'gradient',
-                    gradient: {
-                        shade: 'light',
-                        type: 'vertical',
-                        shadeIntensity: 0.1,
-                        inverseColors: false,
-                        opacityFrom: 1,
-                        opacityTo: 0.9,
-                        stops: [0, 100]
-                    }
-                },
-
-                tooltip: {
-                    y: {
-                        formatter: function(val) {
-                            return val + " bilyet"
-                        }
-                    }
-                }
-            };
-
-
-
-            var chartcolumnchart = new ApexCharts(
-                document.querySelector("#chart-widget4"),
-                optionscolumnchart
-            );
-            chartcolumnchart.render();
-        });
-
-        $.getJSON("https://spreadsheets.google.com/feeds/list/1jxLmf7UHPZmD3-X8Mtd92ePQjTsc01kD3PFR2q6fdDo/2/public/full?alt=json", function(data) {
-            console.log("kelompok");
-            console.log(data);
-            last_individu = moment(data['feed']['updated']['$t']);
-            $('#last_individu').html(last_individu.format("dddd, MMMM Do YYYY, h:mm:ss a"));
-            $('#tukar_kelompok').html(numeral(data['feed']['entry'][0]['gsx$total']['$t']).format('0,0'));
-            arrayKelompok = {
-                'bilyet': [],
-                'cancel': [],
-                'bulan': [],
-                'tanggal': [],
-                'kelompok': [],
-            }
-
-            function mapToChart(item, index) {
-                console.log(item);
-                this['bilyet'].push(item['gsx$tukar']['$t']);
-                this['kelompok'].push(item['gsx$kelompok']['$t']);
-                this['cancel'].push(item['gsx$cancel']['$t']);
-                this['bulan'].push(item['gsx$bulan']['$t']);
-                this['tanggal'].push(item['gsx$tanggal']['$t']);
-            }
-
-            var optionscolumnchart = {
-                series: [{
-                    name: 'Bilyet',
-                    data: arrayKelompok['tukar'],
-                    type: 'column'
-                }, {
-                    name: 'Cancel',
-                    data: arrayKelompok['cancel'],
-                    type: 'column'
-                }, {
-                    name: 'Kelompok',
-                    data: arrayKelompok['cancel'],
-                    type: 'line',
-                }],
-                legend: {
-                    show: true
-                },
-                chart: {
-                    type: 'line',
-                    height: 380
-                },
-                plotOptions: {
-                    bar: {
-                        radius: 10,
-                        horizontal: false,
-                        columnWidth: '55%',
-                        endingShape: 'rounded',
-                    }
-                },
-                dataLabels: {
-                    enabled: false
-                },
-                stroke: {
-                    show: true,
-                    colors: ['transparent'],
-                    curve: 'smooth',
-                    lineCap: 'butt'
-                },
-                grid: {
-                    show: false,
-                    padding: {
-                        left: 0,
-                        right: 0
-                    }
-                },
-                xaxis: {
-                    categories: arrayKelompok['tanggal'],
-                },
-                yaxis: {
-                    title: {
-                        text: 'bilyet'
-                    }
-                },
-                fill: {
-                    colors: [CubaAdminConfig.primary, CubaAdminConfig.secondary, '#51bb25'],
-                    type: 'gradient',
-                    gradient: {
-                        shade: 'light',
-                        type: 'vertical',
-                        shadeIntensity: 0.1,
-                        inverseColors: false,
-                        opacityFrom: 1,
-                        opacityTo: 0.9,
-                        stops: [0, 100]
-                    }
-                },
-
-                tooltip: {
-                    y: {
-                        formatter: function(val) {
-                            return val + " bilyet"
-                        }
-                    }
-                }
-            };
-
-
-
-            var chartcolumnchart = new ApexCharts(
-                document.querySelector("#chart-widget5"),
-                optionscolumnchart
-            );
-            chartcolumnchart.render();
-
-        });
-
-
-
-        $(".page-wrapper").attr("class", "page-wrapper horizontal-wrapper ");
-        $(".page-body-wrapper").attr("class", "page-body-wrapper horizontal-menu");
-        $(".logo-wrapper").find('img').attr('src', '../assets/images/logo/logo.png');
-        localStorage.setItem('page-wrapper', 'horizontal-wrapper');
-        localStorage.setItem('page-body-wrapper', 'horizontal-menu');
-        $(".main-nav").hide();
-    </script>
+    <script src="dash.js"></script>
 </body>
 
 </html>
